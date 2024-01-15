@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre registration</title>
+    <h1 id="title">HealthCare</h1>
+    <link rel="stylesheet" href="dummy1.css">
+</head>
+<body>
+    <body>
+        <h2>Pre-Registration</h2>
+        <p id="description">Provide the following information. A member of our staff will contact you for scheduling.</p>
+        <form id="survey-form">
+          <fieldset>
+           <label type="name"id="name-label">Enter your name: <input id="name" placeholder="Your Name" required /></label>
+           <label id="phone-label"type="tel">Phone Number: <input id="phone" type="tel" placeholder="phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required /></label>
+           <label type="email" id="email-label">E-mail Address: <input id="email"  type= "email" name="email" placeholder="email here" required /></label> 
+          </fieldset>
+          <fieldset>
+            <label for="Blood-Group">Your required blood group:</label>
+
+            <select name="Blood-Group" id="Blood-Group`">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+            <br>
+          <label>Your Urgency on Scale of 1-10</label>
+          <input type="number" value="urgency" min="1" max="10">
+          </fieldset>
+            
+           <fieldset>Is your current condition due to the following: <br><br>
+             <input type="radio" name="case-type" class="inline" value="mva" /> Motor Vehicle Accident</label>
+            <input type="radio" name="case-type" class="inline" value="wc" /> Work Injury</label>
+          <input type="radio" name="case-type" class="inline" value="n" /> Neither</label>
+          </fieldset>
+      
+       <input id="submit" type="submit" value="Submit" />
+        </form>
+        
+</body>
+</html>
