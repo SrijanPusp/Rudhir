@@ -119,3 +119,11 @@ input[type="submit"] {
 
 >>>>>>> 53dd8a29e2476bad7a8d743e5e7d0331a2142f3c
 
+#checkboxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 800px;
+}
+

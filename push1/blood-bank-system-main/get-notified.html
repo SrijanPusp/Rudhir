@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Donation Slot</title>
+    <title>Get Notified</title>
     <h1 id="title">Rudhir</h1>
     <link rel="stylesheet" href="blood-req.css">
 </head>
 <body>
     <body id="para">
-        <h2>Book Donation Slot</h2>
-        <p id="description">Please enter right details so that we can connect you with nearest blood bank and book a slot for you</p>
+        <h2>Get Notified</h2>
+        <p id="description">In case of unaivalablity of requested blood units in your neighbourhood, you'll be notified for donation opportunities.</p>
         <form id="survey-form">
           <fieldset>
            <label type="name"id="name-label">Enter your name: <input id="name" placeholder="Your Name" required /></label>
@@ -21,7 +21,7 @@
             <label for="Blood-Group">Your blood group:</label>
 
           
-            <select name="Blood-Group" id="dropdown">
+            <select name="Blood-Group" id="dropdown" required>
               <option value="A+">A+</option>
               <option value="A-">A-</option>
               <option value="B+">B+</option>
@@ -32,9 +32,10 @@
               <option value="O-">O-</option>
             </select>
 
-            <br>
-            <label>Please enter a date to book a slot</label>
-            <input type="date">
+            <label>Hereby I accept the terms and conditions and will try my best for volunteering when the need arises
+              <input id="check" required type="checkbox" value="yes" >
+            </label>
+          
           </fieldset>
             
           
