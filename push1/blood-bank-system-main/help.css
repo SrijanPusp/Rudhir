@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
@@ -74,7 +74,7 @@ header{
   .header-list ul li::after {
     content: "";
     height: 2px;
-    background: #cd5c5c;
+    background: #f47b7b;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -147,14 +147,14 @@ h2:after{
     height: 4px;
     width: 50px;
     border-radius: 2px;
-    background-color:  	#008B8B;
+    background-color:  	#8b0000;
 }
 
 .field{
 	width: 100%;
 	border: 2px solid rgba(0, 0, 0, 0);
 	outline: none;
-	background-color: rgba(230, 230, 230, 0.6);
+	background-color: rgba(246, 125, 125, 0.6);
 	padding: 0.5rem 1rem;
 	font-size: 1.1rem;
 	margin-bottom: 22px;
@@ -172,7 +172,7 @@ textarea{
 .btn{
 	width: 100%;
 	padding: 0.5rem 1rem;
-	background-color:#008B8B;
+	background-color:#8b0000;
 	color: #fff;
 	font-size: 1.1rem;
 	border: none;
@@ -276,7 +276,7 @@ main{
 }
 .sci li:nth-child(1) a:hover {
 
-    color: #3b5998;
+    color: #de9a9a;
     transform: translateY(-20%);
 
 }
@@ -290,7 +290,7 @@ main{
 
 .sci li:nth-child(3) a:hover {
 
-    color: #F0E68C;
+    color: #f08cc6;
     transform: translateY(-20px);
 }
 
@@ -542,5 +542,32 @@ margin: 0px auto;
 .bout {
     padding-left: 2px;
     padding-right: 2px;
+}
+}
+.left span{
+    margin-top: 80px;
+    padding-left: 0px;
+    display: flex;
+    gap: 10px;
+    align-items: center ;
+}
+.left{
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 80%;
+    font-family: sans-serif;
+.left img{
+    margin-left: 60px;
+    margin-top: 90px;
+    height: 350px;
+    align-items: center;
+    /* padding: 20px; */
+    padding-bottom: 40px;
+    padding-right: 20px;
+}
+.right{
+    height: 500px;
+    width: 25vw;
+    padding-right: 100px;
 }
 }
