@@ -103,17 +103,6 @@ header {
   width: 100%;
 }
 
-/* card for blood bank info */
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 300px;
-  margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease; /* Adding transition for smooth hover effect */
-}
 
 /* Header styling */
 .card-header {

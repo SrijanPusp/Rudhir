@@ -52,21 +52,21 @@ header{
 .header-list ul li {
     float: right;
     padding-left: 30px;
-    padding-top: 30px;
+    padding-top: 40px;
     list-style: none;
-    padding-right: 40px;
+    padding-right: 30px;
 }
 
 .header-list ul li {
     list-style: none;
     display: inline-block;
-    padding: 8px 15px;
+    padding: 5px 8px;
     position: relative;
   }
   
   .header-list ul li a {
     color: black;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
     font-family: "Fredoka One", cursive;
   }
@@ -86,7 +86,7 @@ header{
   }
   
 
-.container{
+ .container{
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -95,112 +95,120 @@ header{
 	align-items: center;
     padding-top: 20%;
 }
-
-.container:after{
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: url("img/bg.jpg") no-repeat center;
-	background-size: cover;
-	filter: blur(50px);
-	z-index: -1;
+.faq-section {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding: 10vh 0 0;
 }
-.contact-box{
-	max-width: 850px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-color: #fff;
-	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
-    padding-right: 10px;
-
+.faq-title h2 {
+  position: relative;
+  margin-bottom: 45px;
+  margin-left: 550px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
 }
-
-.left{
-	background: url(./Images/help.jpg) no-repeat center;
-	background-size: cover;
-	height: 100%;
-}
-
-.right{
-	padding: 25px 40px;
-}
-
-h2{
-	position: relative;
-	padding: 0 0 10px;
-	margin-bottom: 10px;
-    font-family: 'Advent Pro', sans-serif;
-}
-
-h2:after{
-	content: '';
+.faq-title h2::before {
+    content: "";
     position: absolute;
     left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 4px;
-    width: 50px;
-    border-radius: 2px;
-    background-color:  	#8b0000;
+    width: 60px;
+    height: 2px;
+    background: #E91E63;
+    bottom: -25px;
+    margin-left: -30px;
+}
+.faq-title p {
+  padding: 0 190px;
+  margin-bottom: 10px;
 }
 
-.field{
-	width: 100%;
-	border: 2px solid rgba(0, 0, 0, 0);
-	outline: none;
-	background-color: rgba(246, 125, 125, 0.6);
-	padding: 0.5rem 1rem;
-	font-size: 1.1rem;
-	margin-bottom: 22px;
-	transition: .3s;
+.faq {
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
 }
 
-.field:hover{
-	background-color: rgba(0, 0, 0, 0.1);
+.faq .card {
+  border: none;
+  background: none;
+  border-bottom: 1px dashed #CEE1F8;
 }
 
-textarea{
-	min-height: 150px;
+.faq .card .card-header {
+  padding: 0px;
+  border: none;
+  background: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
-.btn{
-	width: 100%;
-	padding: 0.5rem 1rem;
-	background-color:#8b0000;
-	color: #fff;
-	font-size: 1.1rem;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	transition: .3s;
+.faq .card .card-header:hover {
+    background: rgba(233, 30, 99, 0.1);
+    padding-left: 10px;
+}
+.faq .card .card-header .faq-title {
+  width: 100%;
+  text-align: left;
+  padding: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #3B566E;
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.btn:hover{
-    background-color: rgba(72,61,139);
+.faq .card .card-header .faq-title .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 14px;
+  float: left;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  background: #E91E63;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 20px;
 }
 
-.field:focus{
-    border: 2px solid rgba(30,85,250,0.47);
-    background-color: #fff;
+.faq .card .card-body {
+  padding: 30px;
+  padding-left: 35px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6F8BA4;
+  line-height: 28px;
+  letter-spacing: 1px;
+  border-top: 1px solid #F3F8FF;
 }
 
-@media screen and (max-width: 880px){
-	.contact-box{
-		grid-template-columns: 1fr;
-	}
-	.left{
-		height: 200px;
-	}
+.faq .card .card-body p {
+  margin-bottom: 14px;
 }
 
-main{
-    background: url(../Images/ug.png);
+@media (max-width: 991px) {
+  .faq {
+    margin-bottom: 30px;
+  }
+  .faq .card .card-header .faq-title {
+    line-height: 26px;
+    margin-top: 10px;
+  }
 }
 
 
