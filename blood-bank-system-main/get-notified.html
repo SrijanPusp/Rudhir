@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href='bb_logo(white).png' type="image/png">
+  <title>Get Notified</title>
+  <style>
+ body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: radial-gradient(#2e0a0a, #e00a0a, rgb(0, 0, 0)); ;
+        color: #333;
+        width: 100%;
+        height: 100%;
+        background: url(login.jpg);
+      }
+      
+      header {
+        background-image: url("");
+        color: #000000;
+        padding: 1em;
+        text-align: center;
+        animation: fadeInDown 1s ease;
+      }
+      
+      section {
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 1em;
+        background-color: rgba(255, 146, 251, 0.528);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: slideInUp 1s ease;
+        border-radius: 25px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 0.5em;
+      }
+      
+      input,
+      select,
+      button {
+        margin-bottom: 1em;
+        animation: fadeIn 1s ease;
+      }
+      
+      button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #45a049;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Get Notified in time of Needs</h1>
+    <p>You will be notified if blood is needed around you 🩸 </p>
+  </header>
+
+  <section id="data-collection">
+    <h2>Details</Details></h2>
+    <form id="Blood-form">
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name here" required>
+
+      <label for="number">Contact No.</label>
+      <input type="number" id="number" name="number" placeholder="Enter your contact details" min="6000000000" max="999999999" required>
+
+      <label for="weight">Weight:</label>
+      <input type="number" id="weight" name="weight" placeholder="Enter your weight (kg)" required>
+
+      <label for="exercise">Weekly Exercise:</label>
+      <select id="exercise" name="exercise" required>
+        <option value="none">Select exercise frequency</option>
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+      </select>
+
+      <label for="blood-group">Blood Group:</label>
+      <select id="blood-group" name="blood-group" required>
+        <option value="none">Select blood group</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <br>
+      <button type="button" onclick="collectHealthData()">Submit</button>
+    </form>
+  </section>
+
+  <!-- <section id="data-analysis">
+    <h2>Data Analysis</h2>
+    <div id="analysis-result"></div>
+  </section> -->
+
+  <script>
+    function collectHealthData() {
+      const weight = document.getElementById('weight').value;
+      const exercise = document.getElementById('exercise').value;
+      const bloodGroup = document.getElementById('blood-group').value;
+      const chronicDisease = document.getElementById('chronic-disease').value;
+
+      // Simulate sending data to a server (in a real application, this would be an AJAX request)
+      sendDataToServer({ weight, exercise, bloodGroup, chronicDisease });
+
+      // Display a message or update UI indicating successful data collection
+      alert('Health data collected successfully!');
+
+      // Perform data analysis (simulated)
+      analyzeHealthData(weight, exercise, bloodGroup, chronicDisease);
+    }
+
+    function sendDataToServer(data) {
+      // In a real application, you would send the data to a server using AJAX or a similar method
+      console.log('Sending data to server:', data);
+    }
+
+    function analyzeHealthData(weight, exercise, bloodGroup, chronicDisease) {
+      // Simulated data analysis
+      let analysisResult = `Based on your weight (${weight} kg), exercise frequency (${exercise}), 
+                            blood group (${bloodGroup}), and chronic disease (${chronicDisease}),`;
+
+      // Check eligibility for blood donation
+      if (bloodGroup !== 'none' && chronicDisease.toLowerCase() === 'no') {
+        analysisResult += ' you are eligible to donate blood.';
+      } else {
+        analysisResult += ' you are not eligible to donate blood.';
+      }
+
+      // Display the analysis result on the page
+      document.getElementById('analysis-result').innerText = analysisResult;
+    }
+  </script>
+</body>
+
+</html>
