@@ -96,9 +96,11 @@
         }
       }
   </style>
+  
 </head>
 
 <body>
+
   <header>
     <h1>Book Your Donation</h1>
     <p>Your donation can save many lives ❤️ </p>
@@ -153,7 +155,7 @@
         <option value="No">No</option>
       </select>
       <br>
-      <button type="button" onclick="collectHealthData()">Submit</button>
+      <button type="button" id="submit-button">Submit</button>
     </form>
   </section>
 
@@ -162,44 +164,78 @@
     <div id="analysis-result"></div>
   </section> -->
 
-  <script>
-    function collectHealthData() {
+  <script type="module" defer>
+
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js'
+
+    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js'
+
+    import { getDatabase, ref, update, push, child } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBJBZcqPw8-YojNzSRimDRbeqnQpXXzZ9s",
+      authDomain: "rudhir-ea9b2.firebaseapp.com",
+      databaseURL: "https://rudhir-ea9b2-default-rtdb.firebaseio.com",
+      projectId: "rudhir-ea9b2",
+      storageBucket: "rudhir-ea9b2.appspot.com",
+      messagingSenderId: "916172406860",
+      appId: "1:916172406860:web:122dd9dfa4cf59312d74e9",
+      measurementId: "G-3W4E8KHQZX"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // Reference to your Firebase database
+    const database = getDatabase(app);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const submitButton = document.getElementById('submit-button');
+      submitButton.addEventListener('click', collectHealthData);
+    });
+
+    const collectHealthData = () => {
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const number = document.getElementById('number').value;
+      const bloodGroup = document.getElementById('blood-group').value;
       const weight = document.getElementById('weight').value;
       const exercise = document.getElementById('exercise').value;
-      const bloodGroup = document.getElementById('blood-group').value;
-      const chronicDisease = document.getElementById('chronic-disease').value;
+      const chronicDisease = document.getElementById('Chronic Disease').value;
+      const chronicDiseaseDetails = document.querySelector('textarea').value;
+      const sleep = document.getElementById('sleep').value;
 
-      // Simulate sending data to a server (in a real application, this would be an AJAX request)
-      sendDataToServer({ weight, exercise, bloodGroup, chronicDisease });
+      // Create an object with the form data
+      const formData = {
+        name: name,
+        number: number,
+        bloodGroup: bloodGroup,
+        weight: weight,
+        exercise: exercise,
+        chronicDisease: chronicDisease,
+        chronicDiseaseDetails: chronicDiseaseDetails,
+        sleep: sleep
+      };
 
-      // Display a message or update UI indicating successful data collection
-      alert('Health data collected successfully!');
+      const entryKey = push(child(ref(database),'blood-form')).key
 
-      // Perform data analysis (simulated)
-      analyzeHealthData(weight, exercise, bloodGroup, chronicDisease);
-    }
+      var updates = {}
 
-    function sendDataToServer(data) {
-      // In a real application, you would send the data to a server using AJAX or a similar method
-      console.log('Sending data to server:', data);
-    }
+      updates['/blood-form/'+entryKey] = formData;
 
-    function analyzeHealthData(weight, exercise, bloodGroup, chronicDisease) {
-      // Simulated data analysis
-      let analysisResult = `Based on your weight (${weight} kg), exercise frequency (${exercise}), 
-                            blood group (${bloodGroup}), and chronic disease (${chronicDisease}),`;
+      update(ref(database),updates)
 
-      // Check eligibility for blood donation
-      if (bloodGroup !== 'none' && chronicDisease.toLowerCase() === 'no') {
-        analysisResult += ' you are eligible to donate blood.';
-      } else {
-        analysisResult += ' you are not eligible to donate blood.';
-      }
+      // Optionally, you can clear the form after submission
+      document.getElementById('Blood-form').reset();
 
-      // Display the analysis result on the page
-      document.getElementById('analysis-result').innerText = analysisResult;
+      // Show a confirmation message to the user
+
+      alert('Your health data has been submitted. You will recieve your donation slot soon!!');
     }
   </script>
-</body>
-
-</html>
+  </body>
+  
+  </html>
