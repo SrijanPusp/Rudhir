@@ -470,7 +470,7 @@ footer {
     transform: translateY(-20px);
 }
 
-.siteFooterBar {
+/* .siteFooterBar { */
     position: absolute;
     bottom: 0;
     padding-top: 10px;
