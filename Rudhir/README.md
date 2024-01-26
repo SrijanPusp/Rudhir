@@ -26,6 +26,8 @@ FOR FRONTEND
 
 FOR BACKEND
 ![BACKEND](https://upload.wikimedia.org/wikipedia/commons/b/bd/Firebase_Logo.png)
+![BACKEND](https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png)
+
 ## Credits
 
  - [Srijan Pusp](https://www.linkedin.com/in/srijanpusp/)
