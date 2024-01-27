@@ -7,6 +7,16 @@
     font-family: 'comic nue', sans-serif;
    
 }
+#logo {
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 65px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Neuton", serif;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
 
 body{
     background-color: rgb(218, 32, 32);
@@ -212,3 +222,13 @@ body{
     right: 0;
     transform: translateX(0);
 }
+#logo {
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 65px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Neuton", serif;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
