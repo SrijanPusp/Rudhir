@@ -212,13 +212,11 @@
     updates['/bloodRequests/' + entrykey] = formdata;
     update(ref(database),updates);
 
-    // You can add further actions or UI updates here
 
-    // Optional: Clear the form after submission
     document.getElementById('request-form').reset();
 
     // Show a confirmation message to the user
-    alert('Your health data has been submitted. You will recieve your donation slot soon!!');
+    alert('Your request has been submitted successfully! You will soon hear from us');
   }
 </script>
 </body>
